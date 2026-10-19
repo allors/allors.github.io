@@ -106,13 +106,14 @@ after changing a diagram or component.
 The [documentation workflow](.github/workflows/documentation.yml) validates the website, without
 publishing it, for pull requests to `main` and for pushes to `main` and to `docs/` branches.
 
-After publication has been approved, make the repository public, configure its Pages source as
-**GitHub Actions** and its `github-pages` environment for deployment from `main`, and run the
-**Documentation** workflow manually on `main` with **publish** selected. The validation job must
-pass before the workflow deploys. The default manual run leaves **publish** unselected and only
-validates. The custom domain and the DNS record are configured outside the workflow; the
+The website is published at `https://docs.allors.com/` from the repository's Pages source
+**GitHub Actions** and its `github-pages` environment, which deploys from `main`; the repository
+is public, as GitHub's Free plan requires for Pages. To publish, run the **Documentation**
+workflow manually on `main` with **publish** selected. The validation job must pass before the
+workflow deploys. The default manual run leaves **publish** unselected and only validates. The
+custom domain and the DNS record are configured outside the workflow; the
 [documentation home record](src/content/docs/internals/documentation-home.md#publication) lists
-the steps in order.
+the steps that were taken, in order.
 
 The workflow follows GitHub's
 [custom Pages workflow](https://docs.github.com/en/pages/getting-started-with-github-pages/using-custom-workflows-with-github-pages)
