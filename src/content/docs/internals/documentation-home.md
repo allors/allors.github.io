@@ -3,13 +3,12 @@ title: "Documentation home"
 description: "How the Allors documentation home is built and published: the organisation site and its custom domain, the areas published beneath it, what was reused, how it was validated, and what remains open."
 audience: "Maintainers"
 kind: "Decision record"
-status: "Planned"
+status: "Current"
 ---
 
-> **Status: Planned.** The website, its Markdown exports and the checks that the documentation
-> workflow runs are built and pass. Publication follows the order that the
-> [publication](#publication) section lists; this record becomes current when the home and the
-> areas are published beneath the shared address.
+> **Status: Current.** The home is published at `https://docs.allors.com/` and the four areas are
+> published beneath it, each from its own repository, in the order that the
+> [publication](#publication) section lists.
 
 This record describes the documentation home: the website at the root of the shared
 documentation address, beneath which the Allors3 platform and the supporting open-source tools
@@ -26,7 +25,7 @@ and publication.
 | Hosting | GitHub Pages, built with GitHub Actions, as the organisation site of the `allors` organisation. |
 | Address | `https://docs.allors.com`, a custom domain on the organisation site. The repository keeps the name `allors.github.io`; the next section says why. |
 | Areas | Allors3 at `/allors3/`, Documents at `/documents/`, Excel at `/excel/` and Immersive at `/immersive/`, each published beneath the same address from its own repository by its own documentation workflow. The home links to the areas; it does not build them. `site.mjs` lists them for the sidebar and the link checker. |
-| Scope | The home covers Allors3 and the supporting open-source tools. The repository is public once published and holds nothing but the home. |
+| Scope | The home covers Allors3 and the supporting open-source tools. The repository is public and holds nothing but the home. |
 | Version context | The home documents its own `main` and has no product version; the label on its pages says `main`. Each area carries its own version label. |
 | Publication | The documentation workflow validates every pull request and push. Publication is a manual run on `main` with `publish` selected, as in the areas. |
 | Checks | The tooling tests, the Astro check, the production build with exports, the link check and the browser tests with accessibility checks, for the base path `/`. |
@@ -65,7 +64,7 @@ and on [custom domains](https://docs.github.com/en/pages/configuring-a-custom-do
 states both rules; consulted on 2026-10-19.
 
 The `allors` organisation is on GitHub's Free plan, which publishes Pages from public
-repositories only, so the repository becomes public at publication. The home was placed on the
+repositories only, so the repository is public. The home was placed on the
 subdomain `docs.allors.com` rather than beneath the company website on 2026-10-19, so that the
 documentation publishes independently of that website.
 
@@ -101,13 +100,19 @@ as the [website instructions](../../../../README.md#check-a-change) describe. Th
 to their Markdown indexes and agent indexes, and the build output names nothing outside the
 home's public scope.
 
+On 2026-10-19, after the four areas were published, the published website was checked end to end:
+the home and every area answer their page, `index.md` and `llms.txt` over HTTPS, plain `http`
+addresses redirect to `https`, the `allors.github.io` addresses redirect to the domain, a browser
+walks from the home to each area and back through the sidebar links without page errors, and the
+published output names nothing outside the public scope.
+
 Automated checks do not establish that an explanation is accurate or clear. The index describes
 each area in that area's own published words; change the description when the area changes its
 own.
 
 ## Publication
 
-The steps, in this order:
+The steps ran in this order on 2026-10-19:
 
 1. Make the repository public.
 2. Verify `allors.com` for the organisation, with the TXT record GitHub gives, so that no other
@@ -116,10 +121,14 @@ The steps, in this order:
    `main` with **publish** selected. The home appears at `https://allors.github.io/`.
 4. Set `docs.allors.com` as the custom domain of the repository, add the DNS record
    `docs.allors.com CNAME allors.github.io`, and enforce HTTPS once the certificate exists.
-5. Switch the areas' deployment origin to `https://docs.allors.com` and publish them from their
-   repositories.
+5. Switch the areas' deployment origin to `https://docs.allors.com`, give each area's sidebar a
+   first entry back to the home, and publish the areas from their repositories: Allors3,
+   Documents, Excel and Immersive, each by a pull request of its own, with the same change in
+   each so that the copies of the tooling stay identical.
 
-Mark this record Current when the home and the areas are published beneath the shared address.
+The custom domain belongs to the organisation site and applies to every project site of the
+organisation, so an area needs no domain configuration of its own; HTTPS is enforced on the
+domain. Each area's decision record describes its own publication.
 
 ## Open choices
 
