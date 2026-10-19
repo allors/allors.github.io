@@ -7,8 +7,9 @@ status: "Planned"
 ---
 
 > **Status: Planned.** The website, its Markdown exports and the checks that the documentation
-> workflow runs are built and pass. Publication to GitHub Pages has not been run: the repository
-> is private, Pages is not enabled and the custom domain is not configured.
+> workflow runs are built and pass. Publication follows the order that the
+> [publication](#publication) section lists; this record becomes current when the home and the
+> areas are published beneath the shared address.
 
 This record describes the documentation home: the website at the root of the shared
 documentation address, beneath which the Allors3 platform and the supporting open-source tools
@@ -97,8 +98,8 @@ On 2026-10-19 the following ran locally at the repository root for the base path
 `npm test`, `npm run check`, `npm run build`, `npm run check:links` and `npm run test:browser`,
 as the [website instructions](../../../../README.md#check-a-change) describe. The exported
 `index.md` and `llms.txt` were read: the index carries the table of the areas with absolute links
-to their Markdown indexes and agent indexes, and no name of an unpublished project appears in the
-build output.
+to their Markdown indexes and agent indexes, and the build output names nothing outside the
+home's public scope.
 
 Automated checks do not establish that an explanation is accurate or clear. The index describes
 each area in that area's own published words; change the description when the area changes its
@@ -106,11 +107,11 @@ own.
 
 ## Publication
 
-Remaining, in this order:
+The steps, in this order:
 
 1. Make the repository public.
-2. Verify `docs.allors.com` for the organisation, with the TXT record GitHub gives, so that no
-   other account can claim the domain.
+2. Verify `allors.com` for the organisation, with the TXT record GitHub gives, so that no other
+   account can claim the domain or its immediate subdomains, `docs.allors.com` among them.
 3. Enable Pages with GitHub Actions as the source and run the **Documentation** workflow on
    `main` with **publish** selected. The home appears at `https://allors.github.io/`.
 4. Set `docs.allors.com` as the custom domain of the repository, add the DNS record
@@ -118,7 +119,7 @@ Remaining, in this order:
 5. Switch the areas' deployment origin to `https://docs.allors.com` and publish them from their
    repositories.
 
-Mark this record Current when the home is published, and revisit it when the areas are.
+Mark this record Current when the home and the areas are published beneath the shared address.
 
 ## Open choices
 

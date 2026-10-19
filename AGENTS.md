@@ -11,8 +11,8 @@ this file says where to find them and how to work here.
   Allors3, Documents, Excel and Immersive lives in those repositories and is published beneath the
   same address by their own workflows; change it there, not here.
 - The home is public and covers Allors3 and the supporting open-source tools. Do not name or link
-  private, unpublished Allors projects in any page, export, index, configuration or commit of
-  this repository.
+  anything outside that scope in any page, export, index, configuration or commit of this
+  repository.
 
 ## Git
 
