@@ -30,6 +30,25 @@ this file says where to find them and how to work here.
 - Nothing is published automatically. The documentation workflow validates pull requests and
   pushes; publication is a manual run of the workflow with `publish` selected, after approval.
 
+## Research records and agent memory
+
+- Store agent research notes, external comparisons, code-evidence inventories and
+  investigation checkpoints in the agent's own built-in memory outside Git. Do not create
+  committed memory files or a separate shared memory store for these records.
+- Do not append sections such as "Research basis and code evidence" merely to record how
+  the agent investigated a task. Keep resulting guidance, designs, decisions and essential
+  rationale in repository documentation when that documentation is authorized.
+- Retain supporting references where a substantive documented claim depends on them.
+  Include an inspected revision or date only when needed to interpret or verify that claim;
+  routine investigation stamps belong in memory.
+- Keep repository documentation understandable without access to any agent's memory.
+  Memory is working context, not authoritative product documentation; verify remembered
+  implementation details against the source relevant to the task.
+- Keep agent-only handoff notes in built-in memory and provide the necessary continuation
+  context in chat. If memory is unavailable, use chat and state the limitation; do not claim
+  to have saved memory or substitute committed files. Explicitly requested research
+  deliverables and project plans remain governed by their authorized scope.
+
 ## Workflow
 
 - Run the checks before considering a task complete, from the repository root: `npm test`,
@@ -46,8 +65,9 @@ this file says where to find them and how to work here.
   terminology page owns its names; use them as the area publishes them.
 - Describe an area in its own published words and link to it for its behaviour. When an area is
   added, renamed or removed, update `site.mjs`, the index and this file in the same pull request.
-- Date a verification that depends on an external state, such as a GitHub setting or a DNS
-  record, and say what was checked.
+- Date a verification that supports a substantive documented claim about external state, such
+  as a GitHub setting or a DNS record, when readers need it to interpret or verify that claim.
+  Keep routine investigation checkpoints in built-in agent memory.
 - Before completing work, review the changed material for factual accuracy, agreed terminology,
   Oxford spelling and clear practitioner language, including labels and pull request text.
   Editorial review is required; no prose linter is part of the tooling.
