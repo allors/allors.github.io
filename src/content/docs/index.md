@@ -17,12 +17,14 @@ areas themselves.
 ## Platform
 
 [Allors3](/allors3/) is an actively developed platform for applications built with domain
-inheritance. An application declares its own domain that extends Core and inherits its model and
-behaviour, directly or through other domains; a domain can extend several domains. The
-documentation is written for users, who build applications on Allors3, and for maintainers, who
-change the platform. It starts with the kinds of domains and continues with authentication,
-logging and the agreed terminology; the maintainer pages explain domain inheritance and workspace
-session state. Source: [allors/allors3](https://github.com/allors/allors3).
+inheritance. An application declares its own domain, which extends Core and inherits its model and
+behaviour, directly or through other domains of its own. The platform is System, which holds the
+database and workspace engines, and Core, the foundational domain; an application owns its
+business domains and its user interface. The documentation is written for users, who build
+applications on Allors3, and for maintainers, who change the platform. It starts with domains and
+continues with configuration, the versions and branches, and the agreed terminology; the
+maintainer pages describe the architecture and how to build and test the repository. Source:
+[allors/allors3](https://github.com/allors/allors3).
 
 ## Open-source tools
 
