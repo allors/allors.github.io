@@ -21,9 +21,11 @@ inheritance. An application declares its own domain, which extends Core and inhe
 behaviour, directly or through other domains of its own. The platform is System, which holds the
 database and workspace engines, and Core, the foundational domain; an application owns its
 business domains and its user interface. The documentation is written for users, who build
-applications on Allors3, and for maintainers, who change the platform. It starts with domains and
-continues with configuration, the versions and branches, and the agreed terminology; the
-maintainer pages describe the architecture and how to build and test the repository. Source:
+applications on Allors3, and for maintainers, who change the platform. For users it starts with a
+tutorial on the platform's test domain and explains domains, the model, objects and relations,
+extents and derivations, next to reference pages on configuration, the versions and branches, and
+the agreed terminology; the index of the area says what is not described yet. The maintainer
+pages describe the architecture and how to build and test the repository. Source:
 [allors/allors3](https://github.com/allors/allors3).
 
 ## Open-source tools
