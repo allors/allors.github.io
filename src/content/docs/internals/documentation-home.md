@@ -91,6 +91,17 @@ records describe. Extracting that set into one implementation is a decision for 
 projects together; until then, port fixes between the copies and keep them identical where the
 table says so.
 
+Since [#9](https://github.com/allors/allors.github.io/pull/9) the values that differed between the
+copies of the tooling are in `site.mjs`: the audiences, which the content schema and `exports.mjs`
+read, the root of the repository, which `source-links.mjs` reads, and the base path, from which
+`check-links.mjs` takes its default. The link checker leaves two kinds of link to the build that
+publishes their target: links into the documentation areas, as before, and the link to the
+documentation home, which the copies of the areas need. With the same change in the other four
+copies, ten files are the same, byte for byte, in all five: the four integrations, the link
+checker, the content schema, the page title component, the stylesheet and the Playwright and
+TypeScript configuration. A copy differs in `site.mjs`, `astro.config.mjs`, its tests, its
+workflow and its content.
+
 ## Validation
 
 On 2026-10-19 the following ran locally at the repository root for the base path `/`:
