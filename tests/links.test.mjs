@@ -109,3 +109,22 @@ test('supports a complete deployment URL and encoded fragments', async (t) => {
   const { errors } = await checkLinks(directory, 'https://docs.example.test/manual/');
   assert.deepEqual(errors, []);
 });
+
+test('leaves the link to the documentation home to its own build and counts it', async (t) => {
+  const directory = await fixture(t, {
+    'index.html': `<h1 id="documentation">Documentation</h1>
+      <a href="https://docs.allors.com/">Allors documentation</a>
+      <a href="/guide/">Guide</a>`,
+  });
+  const beneath = await checkLinks(directory, '/home/', { home: 'https://docs.allors.com/' });
+  assert.equal(beneath.errors.length, 1);
+  assert.match(beneath.errors[0], /index\.html.*\/guide\/.*deployment base.*home/);
+  assert.equal(beneath.links, 1);
+  assert.equal(beneath.unchecked, 1);
+
+  const root = await checkLinks(directory, '/', { home: 'https://docs.allors.com/' });
+  assert.equal(root.errors.length, 1);
+  assert.match(root.errors[0], /index\.html.*\/guide\/.*does not exist/);
+  assert.equal(root.links, 2);
+  assert.equal(root.unchecked, 0);
+});
