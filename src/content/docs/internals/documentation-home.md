@@ -78,7 +78,7 @@ carries the fixes made since the Allors3 original. The changes for the home:
 | --- | --- |
 | `site.mjs` | Title, description, the version label `main`, repository, the default origin `https://docs.allors.com`, the default base path `/`, and the list of areas. |
 | `astro.config.mjs` | Sidebar: the index, the platform and the open-source tools as absolute links to the areas, and the maintainer pages. Edit links point to the repository root, because the website is not in a `docs/` folder. |
-| `integrations/source-links.mjs` | The repository root is one level above `integrations/`, not two. |
+| `integrations/source-links.mjs` | The repository root is one level above `integrations/`, not two. Since [#4](https://github.com/allors/allors.github.io/pull/4) it also gives a link to a page in a subfolder forward slashes on every platform, where it wrote a backslash on Windows. The fix comes from Allors3 and is in every copy of the tooling. |
 | `scripts/check-links.mjs` | The default origin and base path. A link into an area is left to that area's build and counted as unchecked, instead of being reported as a missing file. |
 | `integrations/exports.mjs`, `integrations/scrollable-content.mjs`, `integrations/focusable-code-blocks.mjs`, `src/components/PageTitle.astro`, `src/content.config.ts`, `src/styles/documentation.css`, `public/favicon.ico`, `tsconfig.json`, `playwright.config.ts`, `.gitignore` | Unchanged. |
 | `package.json`, `package-lock.json` | The package name; the pinned dependency versions are identical. |
