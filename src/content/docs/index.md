@@ -23,12 +23,13 @@ database and workspace engines, and Core, the foundational domain; an applicatio
 business domains and its user interface. The documentation is written for users, who build
 applications on Allors3, and for maintainers, who change the platform. For users it starts with a
 tutorial on the platform's test domain and a guide to creating an application. It explains
-domains, objects and relations, derivations, populations, security and authentication, with
-guides to querying with extents, writing a rule, granting access, upgrading a population and
-hosting a server, next to reference pages on the model, the command-line tool, the JSON API,
-configuration, the versions and branches, and the agreed terminology; the index of the area says
-what is not described yet. The maintainer pages describe the architecture and how to build and
-test the repository. Source: [allors/allors3](https://github.com/allors/allors3).
+domains, objects and relations, derivations, populations, security, authentication and the
+workspace. Its guides cover querying with extents, writing a rule, granting access, upgrading a
+population, hosting a server and using a workspace from .NET, and its reference pages cover the
+model, the command-line tool, the JSON API, the pulls of the .NET workspace, the TypeScript
+workspace, configuration, the versions and branches, and the agreed terminology; the index of the
+area says what is not described yet. The maintainer pages describe the architecture and how to
+build and test the repository. Source: [allors/allors3](https://github.com/allors/allors3).
 
 ## Open-source tools
 
